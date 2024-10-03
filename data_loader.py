@@ -18,8 +18,8 @@ class GetLoader(data.Dataset):
         self.img_labels = []
 
         for data in data_list:
-            self.img_paths.append(data[:-3])
-            self.img_labels.append(data[-2])
+            self.img_paths.append(data.split()[0])
+            self.img_labels.append(data.split()[1])
 
     def __getitem__(self, item):
         img_paths, labels = self.img_paths[item], self.img_labels[item]
